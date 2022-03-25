@@ -1,0 +1,53 @@
+$coloring: #FF4F79, #161032, #C6CA53, #0E79B2, #F39237, #5FB49C, #5A1807, #161032;
+$book: #414288, #FFAE03, #EA526F, #df2935;
+
+@keyframes colorIn {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0px;
+    }
+}
+
+.overlap {
+    background-color: #F7E7CE;
+    height: 5rem;
+    position: relative;
+    z-index: 1;
+    animation: colorIn;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0,.48,1,.51);
+    animation-iteration-count: 1;
+}
+
+.header {
+    @for $i from 1 through length($coloring) {
+        @if $i == 8 {
+            span:nth-child(#{$i}) {
+                color: nth($coloring, $i);
+                margin-right: 20px;
+            }
+        }
+        @else {
+            span:nth-child(#{$i}) {
+                color: nth($coloring, $i);
+            }     
+        }
+    }
+
+    @for $i from 1 through length($book) {
+        span:nth-child(#{$i + 8}) {
+            color: nth($book, $i)
+        }
+    }
+
+    font-family: Corben;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    font-size: 3rem;
+    position: absolute;
+    top: 0;
+}
