@@ -1,0 +1,77 @@
+$degrees: -0deg, 45deg, 90deg, -45deg, -45deg, 90deg, 45deg, 0;
+$bg: #F8F8FF;
+
+@mixin petals($rot, $name, $i) {
+    .petals#{$name} {
+        @extend %petalsGroup;
+
+        div:nth-child(#{$i}) {
+            @extend %singlePetal;
+            transform: rotate($rot)
+        }
+    }
+}
+
+@for $i from 1 through 8 {
+    @if $i <= 3 {
+        @include petals(
+            nth($degrees, $i),
+            "Top",
+            $i
+        );
+    }
+    @else if $i > 3 and $i <= 5 {
+        @include petals(
+            nth($degrees, $i),
+            "Mid",
+            $i - 3
+        );
+    }
+    @else {
+        @include petals(
+            nth($degrees, $i),
+            "Bottom",
+            $i - 5
+        );
+    }
+}
+
+%petalsGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%singlePetal {
+    border-radius: 0% 100% 0% 100% / 0% 100% 0% 100%;
+    border: 1px solid #000000;
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+    position: relative;
+    background-color: $bg;
+}
+
+.flower {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: $bg;
+
+
+}
+
+.circle {
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    background-color: #F7E7CE;
+    position: absolute;
+    z-index: 1;
+    background-color: $bg;
+}
+

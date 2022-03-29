@@ -1,11 +1,12 @@
 import Header from "../components/Header/header";
-import Options from "../components/Option/option";
+import Choose from "../components/Option/choose";
 
 export default function Home() {
     return (
         <>
-            <Header></Header>
-            <Options></Options>
+            <Header>
+                <Choose />
+            </Header>
         </>
     )
 }
