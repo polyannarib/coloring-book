@@ -1,36 +1,45 @@
-$bg: #F8F8FF;
+@use "../../styles/variables" as var;
+
+
 $borderStyle: 1px solid #000000;
-$sandStyle: "", 1, 70%, 20%, -10px, 20px, "Bottom", 1,
-            "63% 100% 0% 0% / 40% 67% 0% 0% ", 2, 70%, 20%, -10px, 20px, "Top", 2;
 
 %positioning {
     position: absolute;
 }
 
 %background {
-    background-color: $bg;
+    background-color: var.$bg;
 }
 
-.container {
-    background-color: $bg;
+button {
+    
+}
+
+.allContainer {
+    display: flex;
+}
+
+.circleContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    width: 100%;
+    width: calc(100% - 500px);
 }
 
 .circle {
+    top: 10%;
     width: 500px;
     height: 500px;
     border-radius: 50%;
     border: $borderStyle;
-    position: relative;
     display: flex;
     flex-direction: column-reverse;
     flex-wrap: nowrap;
     align-items: center;
     flex-shrink: 0;
-    overflow: hidden;
+    overflow: auto;
+    @extend %positioning;
 
     .sandBottom {
         border: $borderStyle;

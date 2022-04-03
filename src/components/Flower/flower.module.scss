@@ -1,5 +1,6 @@
+@use "../../styles/variables" as var;
+
 $degrees: -0deg, 45deg, 90deg, -45deg, -45deg, 90deg, 45deg, 0;
-$bg: #F8F8FF;
 
 @mixin petals($rot, $name, $i) {
     .petals#{$name} {
@@ -49,19 +50,30 @@ $bg: #F8F8FF;
     height: 140px;
     flex-shrink: 0;
     position: relative;
-    background-color: $bg;
+    background-color: var.$bg;
+}
+
+.allContainer {
+    display: flex;
+}
+
+.flowerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 500px);
+    position: relative;
 }
 
 .flower {
+    top: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     width: 100%;
-    background-color: $bg;
-
-
+    background-color: var.$bg;
+    position: absolute;
 }
 
 .circle {
@@ -72,6 +84,6 @@ $bg: #F8F8FF;
     background-color: #F7E7CE;
     position: absolute;
     z-index: 1;
-    background-color: $bg;
+    background-color: var.$bg;
 }
 
