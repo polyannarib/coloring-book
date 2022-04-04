@@ -11,8 +11,32 @@ $borderStyle: 1px solid #000000;
     background-color: var.$bg;
 }
 
-button {
-    
+.bgButton {
+    margin-top: 50px;
+    border-width: 2px;
+    border-style: solid;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    font-family: Poppins;
+    background-color: transparent;
+    color: #F7E7CE;
+    border-color: #F7E7CE;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.colorContainer {
+    width: 400px;
+    height: 100vh;
+    z-index: 2;
+    background-color: #878897;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .allContainer {
@@ -24,7 +48,7 @@ button {
     align-items: center;
     justify-content: center;
     width: 100%;
-    width: calc(100% - 500px);
+    width: calc(100% - 400px);
 }
 
 .circle {
@@ -40,6 +64,7 @@ button {
     flex-shrink: 0;
     overflow: auto;
     @extend %positioning;
+    @extend %background;
 
     .sandBottom {
         border: $borderStyle;
@@ -86,28 +111,37 @@ button {
     }
 }
 
-.clouds {
+.cloudContainer {
     position: relative;
-    display: flex;
-    flex-shrink: 0;
+    overflow: hidden;
 
-    .cloudHelper {
-        height: 33px;
-        width: 75px;
-        top: 8px;
-        @extend %positioning;
-        @extend %background;
-
-    }
-
-    @for $i from 2 through 4 {
-        div:nth-child(#{$i}) {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-left: -15px;
-            border: $borderStyle;
+    .clouds {
+        position: relative;
+        display: flex;
+        flex-shrink: 0;
+    
+        .cloudHelper {
+            height: 33px;
+            width: 75px;
+            top: 8px;
+            left: 20px;
+            @extend %positioning;
             @extend %background;
+    
+        }
+    
+        @for $i from 2 through 4 {
+            div:nth-child(#{$i}) {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: $borderStyle;
+                @extend %background;
+                overflow: hidden;
+                @if $i != 2 {
+                    margin-left: -15px;
+                }
+            }
         }
     }
 }
