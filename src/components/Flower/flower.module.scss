@@ -8,7 +8,7 @@ $degrees: -0deg, 45deg, 90deg, -45deg, -45deg, 90deg, 45deg, 0;
 
         div:nth-child(#{$i}) {
             @extend %singlePetal;
-            transform: rotate($rot)
+            transform: rotate($rot);
         }
     }
 }
@@ -53,6 +53,34 @@ $degrees: -0deg, 45deg, 90deg, -45deg, -45deg, 90deg, 45deg, 0;
     background-color: var.$bg;
 }
 
+.bgButton {
+    margin-top: 50px;
+    border-width: 2px;
+    border-style: solid;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    font-family: Poppins;
+    background-color: transparent;
+    color: #F7E7CE;
+    border-color: #F7E7CE;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.colorContainer {
+    width: 400px;
+    height: 100vh;
+    z-index: 2;
+    background-color: #878897;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .allContainer {
     display: flex;
 }
@@ -72,7 +100,6 @@ $degrees: -0deg, 45deg, 90deg, -45deg, -45deg, 90deg, 45deg, 0;
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: var.$bg;
     position: absolute;
 }
 
