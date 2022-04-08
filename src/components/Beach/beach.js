@@ -1,18 +1,18 @@
-import { useEffect } from "react";
-import { useColor } from "react-color-palette";
+import { useEffect, useState } from "react";
 import styles from "./beach.module.scss";
 import Color from "../Color/color";
+import randomColor from "../../randomColor";
 
 export default function Beach() {
-    const [color, setColor] = useColor("hex", "#F7E7CE");
+    const [color, setColor] = useState("#F7E7CE");
     const ids = ["circle", "sun", "sea", "sand-bottom", "sand-top", "cloud-right", "cloud-left"];
 
     useEffect(() => {
-        document.body.style.backgroundColor = color.hex;
+        document.body.style.backgroundColor = color;
     }, []);
 
     function backgroundColor() {
-        document.body.style.backgroundColor = color.hex;
+        document.body.style.backgroundColor = color;
     }
 
     function coloring(id) {
@@ -20,11 +20,11 @@ export default function Beach() {
             if (id === "cloud-left" || id === "cloud-right") {
                 let cloud = document.getElementById(id + "-2");
                 cloud.querySelectorAll(":scope > div").forEach((elem) => {
-                    elem.style.backgroundColor = color.hex;
+                    elem.style.backgroundColor = color;
                 })
             }
             else {
-                document.getElementById(id).style.backgroundColor = color.hex;
+                document.getElementById(id).style.backgroundColor = color;
             }
         }
     }
@@ -32,10 +32,16 @@ export default function Beach() {
     return (
         <div className={styles.allContainer}>
             <div className={styles.colorContainer}>
-                <Color select={setColor} coloring={color} />
+                <Color change={setColor} color={color} />
+                <button
+                    onClick={() => randomColor().then(e => setColor(e))}
+                    className={styles.buttons}
+                >
+                    Random color
+                </button>
                 <button
                     onClick={() => backgroundColor()}
-                    className={styles.bgButton}
+                    className={styles.buttons}
                 >
                     Change background color
                 </button>

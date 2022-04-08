@@ -53,17 +53,19 @@ $degrees: -0deg, 45deg, 90deg, -45deg, -45deg, 90deg, 45deg, 0;
     background-color: var.$bg;
 }
 
-.bgButton {
-    margin-top: 50px;
+.buttons {
+    width: 300px;
+    margin-top: 30px;
     border-width: 2px;
     border-style: solid;
-    padding: 10px;
+    padding: 10px 0 10px 0;
     font-size: 16px;
     border-radius: 20px;
     font-family: Poppins;
     background-color: transparent;
     color: #F7E7CE;
     border-color: #F7E7CE;
+    font-weight: bold;
 
     &:hover {
         cursor: pointer;

@@ -1,34 +1,41 @@
 import styles from "./flower.module.scss"
-import { useEffect } from "react";
-import { useColor } from "react-color-palette";
+import { useEffect, useState } from "react";
 import Color from "../Color/color";
+import randomColor from "../../randomColor";
 
 export default function Flower() {
-    const [color, setColor] = useColor("hex", "#F7E7CE");
+    const [color, setColor] = useState("#F7E7CE");
     const ids = ["petal-top-1", "petal-top-2", "petal-top-3", "petal-mid-1", "petal-mid-2",
                  "petal-bottom-1", "petal-bottom-2", "petal-bottom-3", "circle"];
 
     useEffect(() => {
-        document.body.style.backgroundColor = color.hex;
+        document.body.style.backgroundColor = color;
     }, []);
 
     function backgroundColor() {
-        document.body.style.backgroundColor = color.hex;
+        document.body.style.backgroundColor = color;
     }
 
     function coloring(id) {
+        console.log(color)
         if(ids.includes(id)) {
-            document.getElementById(id).style.backgroundColor = color.hex
+            document.getElementById(id).style.backgroundColor = color;
         }
     }
 
     return (
         <div className={styles.allContainer}>
             <div className={styles.colorContainer}>
-                <Color select={setColor} coloring={color} />
+                <Color change={setColor} color={color} />
+                <button
+                    onClick={() => randomColor().then(e => setColor(e))}
+                    className={styles.buttons}
+                >
+                    Random color
+                </button>
                 <button
                     onClick={() => backgroundColor()}
-                    className={styles.bgButton}
+                    className={styles.buttons}
                 >
                     Change background color
                 </button>
