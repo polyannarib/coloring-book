@@ -7,7 +7,7 @@ class Doc extends Document {
       <Html>
         <Head>
             <link href="https://fonts.googleapis.com/css2?family=Corben:wght@700&display=swap" rel="stylesheet" /> 
-            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" /> 
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet" /> 
         </Head>
         <body>
           <Main />

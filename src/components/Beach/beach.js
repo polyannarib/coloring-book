@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./beach.module.scss";
 import Color from "../Color/color";
+import Layout from "../Layout/layout";
 import randomColor from "../../randomColor";
 
 export default function Beach() {
@@ -45,6 +46,7 @@ export default function Beach() {
                 >
                     Change background color
                 </button>
+                <Layout />
             </div>
             <div className={styles.circleContainer}>
                 <div

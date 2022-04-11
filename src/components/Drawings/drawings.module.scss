@@ -1,0 +1,31 @@
+@use "sass:math";
+
+$colors: #FF4F79, #161032, #C6CA53, #0E79B2, #F39237, #5FB49C, #5A1807, #161032,
+    #414288, #FFAE03, #EA526F, #df2935;
+
+$len: length($colors);
+$index: math.random($len);
+
+.optionsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
+
+    div {
+        border-top: 2px solid nth($colors, $index);
+    }
+
+    div:last-child {
+        border-bottom: 2px solid nth($colors, $index);
+    }
+}
+
+.option {
+    text-align: center;
+    font-family: Poppins;
+    font-weight: 300;
+    font-size: 24px;
+    padding: 5px 0 5px 0;
+    color: #0A0A0A;
+}

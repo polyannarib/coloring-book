@@ -65,7 +65,7 @@ $degrees: -0deg, 45deg, 90deg, -45deg, -45deg, 90deg, 45deg, 0;
     background-color: transparent;
     color: #F7E7CE;
     border-color: #F7E7CE;
-    font-weight: bold;
+    font-weight: 400;
 
     &:hover {
         cursor: pointer;
@@ -81,6 +81,7 @@ $degrees: -0deg, 45deg, 90deg, -45deg, -45deg, 90deg, 45deg, 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .allContainer {

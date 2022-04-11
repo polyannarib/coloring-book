@@ -1,6 +1,7 @@
 import styles from "./flower.module.scss"
 import { useEffect, useState } from "react";
 import Color from "../Color/color";
+import Layout from "../Layout/layout";
 import randomColor from "../../randomColor";
 
 export default function Flower() {
@@ -39,6 +40,7 @@ export default function Flower() {
                 >
                     Change background color
                 </button>
+                <Layout />
             </div>
             <div className={styles.flowerContainer}>
                 <div className={styles.flower}>
