@@ -3,6 +3,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 This app is designed for exercising your creativity and artistic side, helping you relax with a little color! Check out the [benefits of coloring](https://www.webmd.com/balance/features/benefits-coloring-adults).
 
+More drawings in development!
+
 ## Implemented Features
 
 - Next.js
