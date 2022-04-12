@@ -14,9 +14,8 @@ This app is designed for exercising your creativity and artistic side, helping y
   - [Layouts](https://nextjs.org/docs/basic-features/layouts)
   - [Next.js API](https://nextjs.org/docs/api-reference/next/link)
 
-- Colors
-  - You can get a random color provided [Colormind API](http://colormind.io/api-access/)
-  - Select a color or input a HEX color string in the [Color Picker](https://github.com/omgovich/react-colorful)
+- You can get a random color provided [Colormind API](http://colormind.io/api-access/)
+- Select a color or input a HEX color string in the [Color Picker](https://github.com/omgovich/react-colorful)
 
 ## Getting Started
 
