@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./beach.module.scss";
 import Color from "../Color/color";
 import Layout from "../Layout/layout";
-import randomColor from "../../randomColor";
+import genColor from "../../util/randomColorGen";
 
 export default function Beach() {
     const [color, setColor] = useState("#F7E7CE");
@@ -35,7 +35,7 @@ export default function Beach() {
             <div className={styles.colorContainer}>
                 <Color change={setColor} color={color} />
                 <button
-                    onClick={() => randomColor().then(e => setColor(e))}
+                    onClick={() => genColor().then((e) => setColor(e.color))}
                     className={styles.buttons}
                 >
                     Random color

@@ -2,7 +2,7 @@ import styles from "./flower.module.scss"
 import { useEffect, useState } from "react";
 import Color from "../Color/color";
 import Layout from "../Layout/layout";
-import randomColor from "../../randomColor";
+import randomColor from "../../util/randomColorApi";
 
 export default function Flower() {
     const [color, setColor] = useState("#F7E7CE");
@@ -18,7 +18,6 @@ export default function Flower() {
     }
 
     function coloring(id) {
-        console.log(color)
         if(ids.includes(id)) {
             document.getElementById(id).style.backgroundColor = color;
         }
