@@ -17,7 +17,7 @@ More drawings in development!
   - [Next.js API](https://nextjs.org/docs/api-reference/next/link)
   - [API Routes](https://nextjs.org/docs/api-routes/introduction)
 
-- You can get a random color provided [Colormind API](http://colormind.io/api-access/)
+- You can get a random color provided by [Colormind API](http://colormind.io/api-access/)
 - Select a color or input a HEX color string in the [Color Picker](https://github.com/omgovich/react-colorful)
 
 ## Getting Started
