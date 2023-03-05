@@ -54,20 +54,23 @@ $degrees: -0deg, 45deg, 90deg, -45deg, -45deg, 90deg, 45deg, 0;
 }
 
 .buttons {
+    font-weight: 400;
     width: 300px;
-    margin-top: 30px;
-    border-width: 2px;
+    margin-top: 16px;
+    border-width: 1px;
     border-style: solid;
-    padding: 10px 0 10px 0;
-    font-size: 16px;
+    padding: 8px;
+    font-size: 14px;
     border-radius: 20px;
     font-family: Poppins;
     background-color: transparent;
     color: #F7E7CE;
     border-color: #F7E7CE;
-    font-weight: 400;
+    height: 40px;
 
     &:hover {
+        color: #878897;
+        background-color: #F7E7CE;
         cursor: pointer;
     }
 }

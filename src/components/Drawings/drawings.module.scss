@@ -5,6 +5,7 @@ $colors: #FF4F79, #161032, #C6CA53, #0E79B2, #F39237, #5FB49C, #5A1807, #161032,
 
 $len: length($colors);
 $index: math.random($len);
+$bg-color: nth($colors, $index);
 
 .optionsContainer {
     display: flex;
@@ -13,19 +14,25 @@ $index: math.random($len);
     margin-top: 50px;
 
     div {
-        border-top: 2px solid nth($colors, $index);
+        border-top: 2px solid $bg-color;
     }
 
     div:last-child {
-        border-bottom: 2px solid nth($colors, $index);
+        border-bottom: 2px solid $bg-color;
     }
-}
 
-.option {
-    text-align: center;
-    font-family: Poppins;
-    font-weight: 300;
-    font-size: 24px;
-    padding: 5px 0 5px 0;
-    color: #0A0A0A;
+    .option {
+        text-align: center;
+        font-family: Poppins;
+        font-weight: 300;
+        font-size: 24px;
+        padding: 5px 0 5px 0;
+        color: #0A0A0A;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba($bg-color, 0.5);
+            color: #FAFAFA;
+        }
+    }
 }

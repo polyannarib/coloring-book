@@ -16,7 +16,7 @@ $borderStyle: 1px solid #000000;
     height: 100vh;
     z-index: 2;
     background-color: #878897;
-    padding: 50px;
+    padding: 48px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,18 +98,21 @@ $borderStyle: 1px solid #000000;
 .buttons {
     font-weight: 400;
     width: 300px;
-    margin-top: 30px;
-    border-width: 2px;
+    margin-top: 16px;
+    border-width: 1px;
     border-style: solid;
-    padding: 10px 0 10px 0;
-    font-size: 16px;
+    padding: 8px;
+    font-size: 14px;
     border-radius: 20px;
     font-family: Poppins;
     background-color: transparent;
     color: #F7E7CE;
     border-color: #F7E7CE;
+    height: 40px;
 
     &:hover {
+        color: #878897;
+        background-color: #F7E7CE;
         cursor: pointer;
     }
 }

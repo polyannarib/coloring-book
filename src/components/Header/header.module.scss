@@ -10,60 +10,56 @@ $book: #414288, #FFAE03, #EA526F, #df2935;
     }
 }
 
-.overlap {
-    background-color: #F7E7CE;
-    position: absolute;
-    z-index: 1;
-    animation: colorIn;
-    animation-duration: 0.5s;
-    animation-fill-mode: both;
-    animation-timing-function: cubic-bezier(0,.48,1,.51);
-    animation-iteration-count: 1;
-    height: 100vh;
-}
-
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
-}
+    margin-bottom: 48px;
 
-.letters {
-    position: absolute;
-}
+    .overlap {
+        background-color: #F7E7CE;
+        position: absolute;
+        z-index: 1;
+        animation: colorIn;
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(0,.48,1,.51);
+        animation-iteration-count: 1;
+        height: 100vh;
+    }
 
-.header {
-    font-family: Corben;
-    font-size: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-
-    @for $i from 1 through length($coloring) {
-        @if $i == 8 {
-            span:nth-child(#{$i}) {
-                color: nth($coloring, $i);
-                margin-right: 20px;
+    .header {
+        font-family: Corben;
+        font-size: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+    
+        @for $i from 1 through length($coloring) {
+            @if $i == 8 {
+                span:nth-child(#{$i}) {
+                    color: nth($coloring, $i);
+                    margin-right: 24px;
+                }
+            }
+            @else {
+                span:nth-child(#{$i}) {
+                    color: nth($coloring, $i);
+                }     
             }
         }
-        @else {
-            span:nth-child(#{$i}) {
-                color: nth($coloring, $i);
-            }     
+    
+        @for $i from 1 through length($book) {
+            span:nth-child(#{$i + 8}) {
+                color: nth($book, $i)
+            }
         }
-    }
-
-    @for $i from 1 through length($book) {
-        span:nth-child(#{$i + 8}) {
-            color: nth($book, $i)
+    
+        div {
+            display: flex;
+            flex-wrap: nowrap;
         }
-    }
-
-    div {
-        display: flex;
-        flex-wrap: nowrap;
     }
 }

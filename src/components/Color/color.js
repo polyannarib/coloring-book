@@ -6,7 +6,7 @@ export default function Color(props) {
     return (
         <>
             <HexColorPicker
-            style={{width: 300, height: 250}}
+                style={{width: 300, height: 250}}
                 color={props.color}
                 onChange={props.change}
             />

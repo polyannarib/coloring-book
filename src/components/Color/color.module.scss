@@ -1,21 +1,16 @@
-.colorPicker {
-    width: 300px;
-    height: 300px;
-    z-index: 3;
-}
-
 .colorInput {
     width: 100px;
     height: 40px;
-    background-color: #EEF1EF;
+    background-color: #FAFAFA;
+    color: #0A0A0A;
     font-family: Poppins;
     text-align: center;
     text-transform: uppercase;
     font-size: 16px;
     font-weight: bold;
     border: 0;
-    border-radius: 15px;
-    margin-top: 15px;
+    border-radius: 20px;
+    margin-top: 16px;
     
     &:focus {
         outline: none;
